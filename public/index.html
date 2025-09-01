@@ -12,6 +12,15 @@
         <h1 class="status-title">Your app is running</h1>
         <p class="status-subtitle">Express server is up on port 3000.</p>
         <a class="status-link" href="/health">Health check</a>
+
+        <h2 class="topic-heading">basic structure of MCP</h2>
+        <div class="topic-paragraph">An MCP (Model Context Protocol) setup typically consists of a client and one or more servers. The client initializes a session, negotiates capabilities, and invokes tools/resources exposed by servers. Servers declare metadata, available tools, and resources; they receive JSON-RPC style requests, execute the work, and stream results, logs, and errors back. Common transports include stdio, HTTP, or WebSocket, with a simple handshake, request/response IDs, and structured error reports.</div>
+
+        <h2 class="topic-heading">example MCP Servers</h2>
+        <div class="topic-paragraph">Examples include: Neon (Postgres DB), Netlify (hosting/deploy), Zapier (automation), Figma (design to code via plugin), Builder CMS (content), Linear (issues), Notion (docs), Supabase (auth/DB), Sentry (errors), Context7 (docs), Semgrep (security), and Prisma Postgres (ORM). These servers expose actions and resources the client can call to orchestrate workflows end‑to‑end.</div>
+
+        <h2 class="topic-heading">Pitfalls developing MCP</h2>
+        <div class="topic-paragraph">Common pitfalls: weak schema/versioning between client and server; blocking or long‑running tools with no timeouts; missing retries/backoff; leaking secrets in logs; poor auth refresh and token storage; rate‑limit handling and idempotency gaps; inadequate streaming/backpressure control; unclear error codes; and lack of local tests/mocks. Prefer explicit schemas, timeouts, retries, structured errors, and secure secret management.</div>
       </section>
     </main>
   </body>
