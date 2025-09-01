@@ -40,6 +40,19 @@
         <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Streaming/backpressure</h3>Unbounded streams exhaust memory or sockets. Example: apply flow control, chunked processing, and consumer‑driven pull. Related CVEs: none specific; stability concern.</div>
         <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Unclear error codes</h3>Ambiguous errors hinder recovery logic. Example: structured errors with codes like invalid_argument, unauthenticated, deadline_exceeded. Related CVEs: not applicable.</div>
         <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Lack of local tests/mocks</h3>Without mocks, regressions slip into production. Example: simulate server tools/resources with fixtures and golden responses in CI. Related CVEs: not applicable; quality practice.</div>
+
+        <h2 class="topic-heading">technical dept</h2>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Estimation model</h3>Debt_days = 0.5×outdated_deps + 3×critical_cves + 1.5×high_cves + 0.1×open_issues + 0.2×coverage_gap_percent + 2×major_migrations. This simple model converts common maintenance signals into an approximate effort in engineer‑days for planning and prioritization.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Database servers (Neon/Supabase)</h3>Typical work involves connector bumps, migration testing, and operational scripts. Example calc (illustrative): 0.5×15 + 3×0 + 1.5×2 + 0.1×40 + 0.2×15 + 2×1 = 19.5 ≈ 20 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Hosting/CDN (Netlify)</h3>Focus on build plugin updates, env management, and preview flows. Example calc: 0.5×8 + 3×0 + 1.5×0 + 0.1×20 + 0.2×10 + 2×0 = 8.0 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Automation (Zapier)</h3>Many integrations, moderate dependency churn, and flaky webhook retries. Example calc: 0.5×10 + 3×0 + 1.5×1 + 0.1×30 + 0.2×20 + 2×0 = 13.5 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Error monitoring (Sentry)</h3>SDK upgrades and PII scrubbing policies dominate. Example calc: 0.5×6 + 3×0 + 1.5×0 + 0.1×25 + 0.2×10 + 2×0 = 7.5 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Security scanning (Semgrep)</h3>Rule tuning and CI performance work are common. Example calc: 0.5×5 + 3×0 + 1.5×0 + 0.1×18 + 0.2×15 + 2×0 = 7.3 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">CMS (Builder)</h3>Model migrations, content validations, and SDK bumps. Example calc: 0.5×9 + 3×0 + 1.5×0 + 0.1×28 + 0.2×20 + 2×1 = 13.3 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Design (Figma)</h3>Token sync and node traversal logic maintenance. Example calc: 0.5×6 + 3×0 + 1.5×0 + 0.1×22 + 0.2×15 + 2×0 = 8.2 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Issue tracking (Linear)</h3>Workflow mutations and query filters evolve frequently. Example calc: 0.5×6 + 3×0 + 1.5×0 + 0.1×16 + 0.2×10 + 2×0 = 6.6 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">Docs (Context7)</h3>API surface changes and version pinning. Example calc: 0.5×7 + 3×0 + 1.5×0 + 0.1×24 + 0.2×15 + 2×0 = 8.9 eng‑days.</div>
+        <div class="topic-paragraph mcp-paragraph"><h3 class="mcp-heading">ORM (Prisma)</h3>Generator changes and cross‑version compatibility testing. Example calc: 0.5×12 + 3×0 + 1.5×1 + 0.1×35 + 0.2×10 + 2×1 = 15.0 eng‑days.</div>
       </section>
     </main>
   </body>
